@@ -1,0 +1,16 @@
+sudo: false
+language: go
+go:
+  - 1.13.x
+  - master
+script:
+  - go test 
+matrix:
+  allow_failures:
+    - go: master
+  fast_finish: true
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+notifications:
+  email: false  
+
