@@ -1,4 +1,5 @@
 package strman
+
 /*
 *
 *  * The MIT License
@@ -1029,6 +1030,4 @@ func TestFormatNumber(t *testing.T) {
 	}.validate(t)
 }
 
-func TestChars00211(t *testing.T) {
-
-}
+//end of file 
