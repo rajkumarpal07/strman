@@ -261,11 +261,7 @@ func Base64Decode(value string) string {
 	return string(data)
 }
 
-// TODO BinEncode and BinDecode and DecDecode correctly
-// string in golang is a sequence of variable-width characters where each and every character
-// is represented by one or more bytes using UTF-8 Encoding.
-
-//DecEncode Convert string chars to decimal unicode (16 digits) //VERIFY
+//DecEncode Convert string chars to decimal unicode (16 digits)
 func DecEncode(value string) string {
 	var b []byte
 	for _, c := range value {
@@ -319,13 +315,13 @@ func Head(value string) string {
 	return FirstNChars(value, 1)
 }
 
-//HexDecode Convert hexadecimal unicode (4 digits) string to string chars VERIFY
+//HexDecode Convert hexadecimal unicode (4 digits) string to string chars
 func HexDecode(value string) string {
 	hs, _ := hex.DecodeString(value)
 	return string(hs)
 }
 
-//HexEncode Convert string chars to hexadecimal unicode (4 digits) VERIFY
+//HexEncode Convert string chars to hexadecimal unicode (4 digits)
 func HexEncode(value string) string {
 	b := []byte(value)
 	s := hex.EncodeToString(b)
@@ -334,7 +330,7 @@ func HexEncode(value string) string {
 
 // IndexOf The indexOf() method returns the index within the calling String of the
 // first occurrence of the specified value, starting the search at fromIndex.
-// Returns -1 if the value is not found. //VERIFY
+// Returns -1 if the value is not found.
 func IndexOf(value string, needle string, caseSensitive bool) int {
 	if caseSensitive {
 		return strings.Index(value, needle)
@@ -352,7 +348,7 @@ func UnEqual(first string, second string) bool {
 	return true
 }
 
-// Insert Inserts 'substring' into the 'value' at the 'index' provided. //VERIFY
+// Insert Inserts 'substring' into the 'value' at the 'index' provided.
 func Insert(value string, substring string, index int) string {
 	res1 := ""
 	if index > len(value) {
@@ -388,7 +384,7 @@ func IsUpperCase(value string) bool {
 	return true
 }
 
-//Last Return the last n chars of String //VERIFY
+//Last Return the last n chars of String
 func Last(value string, n int) string {
 	if n > len(value) {
 		return value
@@ -407,7 +403,7 @@ func LeftPad(value string, padStr string, pLen int) string {
 	return strings.Repeat(padStr, pLen) + value
 }
 
-//RightPad2Len VERIFY
+//RightPad2Len Right pad a string with padStr
 // If the overallLen is shorter than the original string length
 // the string will be shortened to this length (substr)
 func RightPad2Len(value string, padStr string, overallLen int) string {
@@ -417,7 +413,9 @@ func RightPad2Len(value string, padStr string, overallLen int) string {
 	return retStr[:overallLen]
 }
 
-//LeftPad2Len VERIFY
+//LeftPad2Len Left pad a string with padStr
+// If the overallLen is shorter than the original string length
+// the string will be shortened to this length (substr)
 func LeftPad2Len(value string, padStr string, overallLen int) string {
 	var padCount int
 	padCount = 1 + ((overallLen - len(padStr)) / len(padStr))
@@ -425,7 +423,7 @@ func LeftPad2Len(value string, padStr string, overallLen int) string {
 	return retStr[(len(retStr) - overallLen):]
 }
 
-//IsString Checks whether parameter is String VERIFY
+//IsString Checks whether parameter is String
 func IsString(value interface{}) bool {
 	res := reflect.TypeOf(value).Kind()
 	if res == reflect.String {
@@ -434,15 +432,15 @@ func IsString(value interface{}) bool {
 	return false
 }
 
-//LastIndexOf This method returns the index within the calling String object of the
-// last occurrence of the specified value, searching backwards from the offset.
+//LastIndexOf returns the index within the calling String object of the
+// last occurrence of the specified value
 // Returns -1 if the value is not found. The search starts from the end and case sensitive.
 func LastIndexOf(value string, needle string) int {
 	res1 := strings.LastIndex(value, needle)
 	return res1
 }
 
-//LastIndexOfWithCase This method returns the index within the calling String object of the
+//LastIndexOfWithCase returns the index within the calling String object of the
 //last occurrence of the specified value
 //Returns -1 if the value is not found. The search starts from the end and case sensitive.
 func LastIndexOfWithCase(value string, needle string, caseSensitive bool) int {
@@ -480,7 +478,7 @@ func PrependArray(value string, prepends []string) string {
 	return result + value
 }
 
-//RemoveEmptyStrings Remove empty Strings from string array  //VERIFY
+//RemoveEmptyStrings Remove empty Strings from string array
 func RemoveEmptyStrings(stringsArr []string) ([]string, error) {
 	if stringsArr == nil {
 		return stringsArr, fmt.Errorf("strman:RemoveEmptyString:: Input array should not be nil")
@@ -495,12 +493,12 @@ func RemoveEmptyStrings(stringsArr []string) ([]string, error) {
 	return result, nil
 }
 
-//RemoveLeft Returns a new String with the prefix removed, if present. This is case sensitive.//VERIFY
+//RemoveLeft Returns a new String with the prefix removed, if present. This is case sensitive.
 func RemoveLeft(value string, prefix string) string {
 	return RemoveLeftWithCase(value, prefix, true)
 }
 
-//RemoveLeftWithCase Returns a new String with the prefix removed, if present. //VERIFY
+//RemoveLeftWithCase Returns a new String with the prefix removed, if present.
 func RemoveLeftWithCase(value string, prefix string, caseSensitive bool) string {
 	result := value
 	if caseSensitive {
@@ -630,7 +628,7 @@ func SafeTruncate(value string, length int, filler string) string {
 	return tresult + filler
 }
 
-//Split Alias to String split function. Defined only for completeness.
+//Split Alias for String split function. Defined only for completeness.
 func Split(value string, delimiterregex string) []string {
 	a := regexp.MustCompile(delimiterregex)
 	temp := a.Split(value, -1)
@@ -679,7 +677,7 @@ func Shuffle(value string) string {
 	return string(arrRune)
 }
 
-//Slice  A substring method
+//Slice A substring method
 func Slice(value string, begin int, end int) string {
 	return value[begin:end]
 }
@@ -788,7 +786,7 @@ func Encode(value string, digits int, radix int) string { //TODO
 	return ""
 }
 
-//Join Join concatenates all the elements of the strings array into a single String.
+//Join concatenates all the elements of the strings array into a single String.
 //The separator string is placed between elements in the resulting string.
 func Join(strarr []string, separator string) string {
 	result := strings.Join(strarr, separator)
@@ -948,7 +946,7 @@ func Humanize(input string) string {
 	return strings.ReplaceAll(result, "_", " ")
 }
 
-//SwapCase Returns a copy of the string in which all the case-based characters have had their case swapped. //VERIFY
+//SwapCase Returns a copy of the string in which all the case-based characters have had their case swapped.
 func SwapCase(input string) string {
 	if len(input) == 0 {
 		return ""
