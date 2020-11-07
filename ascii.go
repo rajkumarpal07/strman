@@ -1,6 +1,6 @@
 package strman
 
-//Hm .....
+//Hm is an Ascii map
 var Hm = make(map[string][]string)
 
 //LoadMapArrays .....
