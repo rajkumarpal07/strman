@@ -41,6 +41,11 @@ import (
 	"unicode"
 )
 
+var (
+	// Version num of strman library
+	Version = "1.0.0"
+)
+
 // Appends strs to value
 func Appends(value string, strs ...string) string {
 	return AppendsArray(value, strs)
