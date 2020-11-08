@@ -304,7 +304,7 @@ func FirstNChars(value string, n int) string {
 	return value[0:n]
 }
 
-//Format Formats a string using parameters TODO
+//Format Formats a string using parameters
 func Format(value string, params ...string) string {
 	result := value
 	return result
@@ -774,16 +774,6 @@ func ToKebabCase(value string) string {
 //ToSnakeCase Transform to snake_case.
 func ToSnakeCase(value string) string {
 	return ToDecamelize(value, "_")
-}
-
-//Decode ...
-func Decode(value string, digits int, radix int) string { //TODO
-	return ""
-}
-
-//Encode ...
-func Encode(value string, digits int, radix int) string { //TODO
-	return ""
 }
 
 //Join concatenates all the elements of the strings array into a single String.
