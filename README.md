@@ -38,8 +38,8 @@ import (
 14. **ContainsAny** - Verifies that one or more of needles are contained in value. Case insensitive.
 15. **ContainsAnyCaseSensitive** - Verifies that one or more of needles are contained in value.
 16. **CountSubstr** - Count the number of times substr appears in value. Case Sensitive.
-17. **CountSubstring** - Count the number of times substr appears in value.
-18. **CountsSubstr** - Counts the number of times substr appears in value.
+17. **CountSubstring** - Count the number of times substr appears in value. 
+18. **CountsSubstr** - Counts the number of times substr appears in value. Allows overlapping.
 19. **Dasherize** - Converts a underscored or camelized string into an dasherized one.
 20. **DecEncode** - Convert string chars to decimal unicode (16 digits).
 21. **EndsWith** - Tests if value ends with search. 
@@ -51,7 +51,7 @@ import (
 27. **First** - Returns the first 3 chars of String(ASCII).
 28. **FirstNChars** - Returns the first n chars of String(ASCII).
 29. **Format** - Formats a string using parameters. Will be added in a future release.
-30. **FormatNumber** - Returns a string representation of the number where groups of three digits are delimited by comma
+30. **FormatNumber** - Returns a string where groups of three digits are delimited by comma.
 31. **HTMLDecode** - Converts all HTML entities to applicable characters.
 32. **HTMLEncode** - Convert all applicable characters to HTML entities.
 33. **Head** - Return the first char of String(ASCII).
