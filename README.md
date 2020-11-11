@@ -1,4 +1,4 @@
-# Strman package
+# Strman library
 A Go string manipulation library. By [Rajkumar Palani](https://www.rajkumarpalani.com)
 
 [![License](https://img.shields.io/:license-mit-blue.svg)](./LICENSE.md)
